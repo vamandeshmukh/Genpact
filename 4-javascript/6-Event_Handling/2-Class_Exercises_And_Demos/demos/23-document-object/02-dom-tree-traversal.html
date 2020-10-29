@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Traversing the nodes of the DOM</title>
+    </head>
+    <body>
+        <p id="my-para">
+            A paragraph
+            <span id="span-1">Span 1 within paragraph</span>
+            <span id="span-2">Span 2 within paragraph</span>
+            <span id="span-3">Span 3 within paragraph</span>
+        </p>
+
+        <script>
+            /**
+             * The DOM nodes are actually instances of specific types of Nodes
+             * For example a paragraph is an instanceof HTMLParagraphElement
+             * Class Hierarchy of HTMLParagraphElement
+             * HTMLParagraphElement -> HTMLElement -> Element -> Node -> EventTarget -> Object
+             */
+            
+            var p = document.getElementById( 'my-para' );
+            var span2 = document.querySelector( '#span-2' );
+            var spans = document.querySelectorAll( 'p span' );
+
+
+            // each of these classes in the hierarchy add some methods/properties
+            console.log( 'p.parentNode =', p.parentNode );
+            console.log( 'p.childNodes =', p.childNodes ); // the whitespaces/text between spans form text nodes
+
+            // the text node before span-2
+            console.log( 'span2.previousSibling =', span2.previousSibling );
+
+            // the text node after span-2
+            console.log( 'span2.nextSibling =', span2.nextSibling );
+
+            // the span before span-2
+            console.log( 'span2.previousSibling.previousSibling =', span2.previousSibling.previousSibling );
+
+            // the span after span-2
+            console.log( 'span2.nextSibling.nextSibling =', span2.nextSibling.nextSibling );
+        </script>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Node creation and insertion into DOM</title>
+    </head>
+    <body>
+        <p id="my-para">
+            A paragraph
+            <span id="span-1">Span 1 within paragraph</span>
+            <span id="span-2">Span 2 within paragraph</span>
+            <span id="span-3">Span 3 within paragraph</span>
+        </p>
+
+        <script>
+            /**
+             * The DOM nodes are actually instances of specific types of Nodes
+             * For example a paragraph is an instanceof HTMLParagraphElement
+             * Class Hierarchy of HTMLParagraphElement
+             * HTMLParagraphElement -> HTMLElement -> Element -> Node -> EventTarget -> Object
+             */
+            
+            // document has a createElement() method that creates a new Element DOM node
+            // we need to pass this method the name of the HTML node to create
+            var span4 = document.createElement('span');
+
+            span4.id = 'span-4';
+            span4.innerHTML = 'Span 4 within paragraph';
+            
+            // appendChild() adds an element as the last child of another element
+            // add the new span after 5 seconds
+            var p = document.getElementById( 'my-para' );
+            setTimeout( function() { p.appendChild( span4 ); }, 5000 );
+
+            var span1andhalf = document.createElement('span');
+            span1andhalf.id = 'span-1.5';
+            span1andhalf.innerHTML = 'Span 1.5 within paragraph';
+
+            // insertBefore() method is inherited from Node
+            // insertBefore() method adds a child just before an existing child
+            // we add the new span before span2
+            var span2 = document.getElementById( 'span-2' );
+            setTimeout( function() { p.insertBefore( span1andhalf, span2 ); }, 5000 );
+        </script>
+    </body>
+</html>

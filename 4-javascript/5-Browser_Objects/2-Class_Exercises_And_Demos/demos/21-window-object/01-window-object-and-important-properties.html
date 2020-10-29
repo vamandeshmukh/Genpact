@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>The window object and some of its important properties (sub-objects)</title>
+    </head>
+    <body>
+        <script>
+            /**
+             * The global object - window
+             * The browser creates an object called window. This is also referred to as the global object in a browser
+             */
+            
+            // All properties and methods concerning the browser window (i.e. the browser element that contains an HTML document) are defined on the window object. There is one window object created for every browser tab
+            console.log( window );
+
+            // some important properties of the window that we will see in detail are
+            // details about the browser and the system platform
+            console.log( window.navigator );
+            // represents the URL of the currently loaded page
+            console.log( window.location );
+            // represents the browser history (pages last visited in the tab)
+            console.log( window.history );
+            // represents the HTML document loaded in the tab - by far the most important property
+            console.log( window.document ); 
+        </script>
+    </body>
+</html>

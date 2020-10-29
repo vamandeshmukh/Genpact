@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>The document object</title>
+    </head>
+    <body>
+        <p>A paragraph (1)</p>
+        <p>A paragraph (2)</p>
+        <p>A paragraph (3)</p>
+        <p>A paragraph (4)</p>
+        
+        <script>
+            /**
+             * The document object represents the HTML document loaded onto the page.
+             * All manipulations of HTML and CSS (and even script includes!) are made using the document object
+             * It is what makes a page come alive!
+             */
+
+            // the document represents the HTML page
+            console.log( 'window.document =', window.document );
+
+            // The HTML page is represented as a tree of "Node" objects under the docuemnt object
+            // Every tag in the HTML page becomes a Node in the "Document Object Model" (DOM)
+
+            // the html element
+            console.log( 'document.documentElement =', document.documentElement );
+
+            // the head element
+            console.log( 'document.head =', document.head );
+
+            // the body element
+            console.log( 'document.body =', document.body );
+
+            // the paragraph
+            console.log( 'document.body.childNodes[3] =', document.body.childNodes[3] );
+        </script>
+    </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Context of event handlers</title>
+    </head>
+    <body>
+        <div id="indira">
+            <div id="rajiv">
+                <div id="rahul">
+                    <input type="button" value="Vote" id="btnEVM" />
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            /**
+             * The function context of the event handlers is set to the element on which the event handler is set (which is the event object's currentTarget - we shall see event object next)
+             */
+
+            var indira = document.querySelector( '#indira' );
+            var rajiv = document.querySelector( '#rajiv' );
+            var rahul = document.querySelector( '#rahul' );
+            var btnEVM = document.querySelector( '#btnEVM' );
+
+            indira.addEventListener('click', function() {
+                console.log( '[capture phase] click handled by indira' );
+                console.log( this );
+            }, true);
+
+            indira.addEventListener('click', function() {
+                console.log( '[bubble phase] click handled by indira' );
+                console.log( this );
+            }, false);
+
+            rajiv.addEventListener('click', function() {
+                console.log( '[capture phase] click handled by rajiv' );
+                console.log( this );
+            }, true);
+
+            rajiv.addEventListener('click', function() {
+                console.log( '[bubble phase] click handled by rajiv' );
+                console.log( this );
+            });
+
+            rahul.addEventListener('click', function() {
+                console.log( '[capture phase] click handled by rahul' );
+                console.log( this );
+            }, true);
+
+            rahul.addEventListener('click', function() {
+                console.log( '[bubble phase] click handled by rahul' );
+                console.log( this );
+            });
+
+            btnEVM.addEventListener('click', function() {
+                console.log( '[capture phase] click handled by btnEVM' );
+                console.log( this );
+            }, true);
+
+            btnEVM.addEventListener('click', function() {
+                console.log( '[bubble phase] click handled by btnEVM' );
+                console.log( this );
+            });
+        </script>
+    </body>
+</html>

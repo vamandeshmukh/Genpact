@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>The history object</title>
+    </head>
+    <body>
+        <script>
+            /**
+             * history object represents the history of pages visited in the current tab (as maintained by the browser)
+             * Visit some pages in the opened tab beforehand before opening this page - so there is something in the history stack
+             * Uncomment each statement one-by-one and see in action
+             */
+            
+            // number of pages in the current tab's history
+            console.log( history.length );
+
+            // goes back to previous page in history - equivalent to the back button being clicked
+            // setTimeout( function() { history.back(); }, 5000 );
+
+            // goes forward to next page in history - equivalent to the forward button being clicked
+            // setTimeout( function() { history.forward(); }, 5000 );
+
+            // use go to move back and forth any number of pages in history.
+            // positive values are steps forrward in history
+            // negative values are steps back in history
+            // history.go(-1); // go back one step in history
+            // history.go(2); // go forward 2 steps in history
+        </script>
+    </body>
+</html>

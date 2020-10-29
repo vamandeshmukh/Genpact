@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        Message: <textarea id="message"></textarea>
+        <button>Display message</button>
+        <p>This is a paragraph whose text can be changed by typing within the textarea and hitting the button.</p>
+
+        <script>
+            /**
+             * Create an HTML page with a paragraph, a textarea element and a button. When the user types something within the textarea and clicks the button, the paragraph is populated with the text the user typed.
+             */
+            document.querySelector( 'button' ).onclick = function() {
+                document.querySelector( 'p' ).innerHTML = document.querySelector( '#message' ).value;
+            };
+        </script>
+    </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Opening and closing popup windows - Example 1</title>
+    </head>
+    <body>
+        <script>
+            /**
+             * Working with the browser window
+             * Working with popup windows
+             */
+
+            // open a document in a new tab (new window for browsers that don't support tabs)
+            // it returns a reference to the new window
+            var win = window.open( 'https://www.medium.com' );
+            
+            // after 5000 ms, i.e. 5 seconds call the passed function
+            // setTimeout is a non-blocking function (asynchronous function)
+            setTimeout( function() {
+                console.log( 'within the setTimeout function argument' );
+                win.close();
+            }, 5000);
+
+            // Exercise: Give 0 instead of 5000 and see the order of outputs
+            // ...
+
+            console.log( 'after call to setTimeout' );
+            console.log( 'after call to alert' );
+        </script>
+    </body>
+</html>

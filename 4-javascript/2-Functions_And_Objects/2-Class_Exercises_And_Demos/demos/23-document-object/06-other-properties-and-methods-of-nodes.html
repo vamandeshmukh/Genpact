@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Other properties and methods of nodes</title>
+        <style>
+            #featured-channel {
+                padding: 10px 20px;
+                border: 1px solid crimson;
+                border-radius: 4px;
+            }
+
+            .intro {
+                color: crimson;
+            }
+
+
+            .first {
+                font-size: 1.5em;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="featured-channel">
+            Channel of the times
+            <div id="section-1" class="first intro" name="mtv">MTV</div>
+            <div id="section-2" class="second intro">Music TV</div>
+            <div id="section-3" class="main">A music channel for millenials</div>
+        </div>
+
+        <script>
+            var div = document.getElementById( 'featured-channel' );
+            var section1 = document.getElementById( 'section-1' );
+            var section2 = document.getElementById( 'section-2' );
+
+            // classList returns an array-like object (DOMTokenList instance) with items being CSS classes for the element
+            // classList is not available on old browsers
+            console.log( 'List of classes on section1 =', section1.classList );
+            // let's remove the intro class on section-2 using DOMTokenList's remove method
+            setTimeout( function() { section2.classList.remove('intro'); }, 5000 );
+
+            // hasAttribute() checks for existence of an attribute on an element
+            console.log( 'Does section1 have a name?', section1.hasAttribute( 'name' ) );
+
+            // getAttribute() is used to get the value of any attribute
+            var name = section1.getAttribute( 'name' );
+            console.log( 'section1 has name set to', name );
+
+            // setAttribute() is used to set the value of any attribute
+            section1.setAttribute( 'name', name.toUpperCase() );
+            console.log( 'section1 has name reset to', section1.getAttribute( 'name' ) );
+
+            // removeAttribute() removes an attribute from an element
+            setTimeout( function() { section1.removeAttribute( 'name' ); }, 5000 );
+        </script>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Removal of DOM nodes</title>
+    </head>
+    <body>
+        <p id="my-para">
+            A paragraph
+            <span id="span-1">Span 1 within paragraph</span>
+            <span id="span-2">Span 2 within paragraph</span>
+            <span id="span-3">Span 3 within paragraph</span>
+        </p>
+
+        <script>
+            var p = document.getElementById( 'my-para' );
+            var span2 = document.getElementById( 'span-2' );
+            var span3 = document.getElementById( 'span-3' );
+
+            // The Node class also provides a removeChild() method for removing child node of a parent
+            // It returns a reference to the removed DOM node
+            setTimeout( function() { p.removeChild( span2 ); }, 5000 );
+
+            // add it back after another 5 seconds
+            setTimeout( function() { p.insertBefore( span2, span3 ); }, 10000 );
+        </script>
+    </body>
+</html>

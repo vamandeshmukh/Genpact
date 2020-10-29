@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Important methods of the event object - Preventing default handling of events and cutting off event flow</title>
+        <style>
+            #btnEVM {
+                display: inline-block;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="indira">
+            <div id="rajiv">
+                <div id="rahul">
+                    <a href="https://en.wikipedia.org/wiki/Nehru%E2%80%93Gandhi_family" id="linkFamily">Nehru-Gandhi family</a>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            /**
+             * Methods of the event object
+             * preventDefault() and stopPropagation()
+             */
+
+            var rahul = document.querySelector( '#rahul' );
+            var linkFamily = document.querySelector( '#linkFamily' );
+
+            rahul.addEventListener('click', function( event ) {
+                console.log( '[capture phase] click handled by rahul' );
+            }, true);
+
+            rahul.addEventListener('click', function( event ) {
+                console.log( '[bubble phase] click handled by rahul' );
+            });
+
+            linkFamily.addEventListener('click', function( event ) {
+                console.log( '[bubble phase] click handled by linkFamily' );
+                var confirmNavigation = window.confirm( 'Are you sure you want to read more on Wikipedia?' );
+                
+                if( confirmNavigation === false ) {
+                    event.preventDefault();
+                }
+
+                event.stopPropagation();
+            }, false);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Querying event details using event object</title>
+        <style>
+            #btnEVM {
+                display: inline-block;
+                width: 100%;
+            }
+        </style>    
+    </head>
+    <body>
+        <div id="indira">
+            <div id="rajiv">
+                <div id="rahul">
+                    <input type="button" value="Vote" id="btnEVM" onclick="btnEVMClickHandler(event);" />
+                </div>
+            </div>
+        </div>
+
+        <script>
+            /**
+             * The details about the event are passed to the handlers via the event object (the argument passed to the handler)
+             * The details can vary from event to event.
+             * The inline click handler set in HTML will not work in the fiddle. Copy to a local file and try.
+             */
+
+            var rahul = document.querySelector( '#rahul' );
+            var btnEVM = document.querySelector( '#btnEVM' );
+
+            rahul.addEventListener('click', function( event ) {
+                console.log( '[bubble phase] click handled by rahul' );
+                console.log( event );
+                console.log( event.target );
+                console.log( 'Screen coordinates where click was made = (', event.screenX, ',', event.screenY, ')' );
+            });
+
+            function btnEVMClickHandler( event ) {
+                console.log( '[bubble phase] click handled by btnEVM' );
+                console.log( event );
+                console.log( event.target );
+                console.log( 'Screen coordinates where click was made = (', event.screenX, ',', event.screenY, ')' );
+            }
+        </script>
+    </body>
+</html>

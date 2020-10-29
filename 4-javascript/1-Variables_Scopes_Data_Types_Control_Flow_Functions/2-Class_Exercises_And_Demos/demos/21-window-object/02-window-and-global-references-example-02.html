@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Global variables and functions are properties of the window object - Example 2</title>
+    </head>
+    <body>
+        <script>
+            /**
+            * All global variables and functions are actually set as properties/methods of the window object
+            */
+            
+            var foo = { greeting: 'hello' };
+
+            var bar = function() {};
+
+            console.log( foo, bar );
+            console.log( window.foo, window.bar );
+            console.log( foo === window.foo );	// true
+            console.log( bar === window.bar );	// true
+        </script>
+    </body>
+</html>

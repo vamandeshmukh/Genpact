@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>View/Edit Profile</title>
+        <link rel="stylesheet" href="external/css/normalize.css">
+        <link rel="stylesheet" href="css/utils.css">
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" href="css/nav.css">
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="container">
+                <ul class="list-unstyled menu">
+                    <li><a href="assign-release-book.html">Assign/Release book</a></li>
+                    <li><a href="books.html">Books</a></li>
+                    <li><a href="members.html">Members</a></li>
+                    <li><a href="add-edit-book.html">Add book</a></li>
+                    <li><a href="add-edit-member.html">Add member</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    
+        <div class="container">
+            <h1>View/Edit Profile</h1>
+            <hr />
+            <h2>Your profile</h2>
+            <hr />
+            <form method="POST" class="form mt-xl mb-xl">
+                <div class="form-group">
+                    <label for="title" class="control-label">Membership ID</label>
+                    <input type="text" id="title" name="title" value="STU-3415"  class="form-control" disabled />
+                </div>
+                
+                <div class="form-group">
+                    <label for="name" class="control-label">Name</label>
+                    <input type="text" id="name" name="name" value="John Doe" class="form-control" disabled />
+                </div>
+            </form>
+
+            <h2>Change password</h2>
+            <hr />
+            <form method="POST" class="form mt-xl mb-xl">
+                <div class="form-group">
+                    <label for="old-password" class="control-label">Old password</label>
+                    <input type="password" id="old-password" name="old-paswword" class="form-control" />
+                </div>
+                
+                <div class="form-group">
+                    <label for="new-password" class="control-label">New password</label>
+                    <input type="password" id="new-password" name="new-paswword" class="form-control" />
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirm-password" class="control-label">Confirm password</label>
+                    <input type="password" id="confirm-password" name="confirm-paswword" class="form-control" />
+                </div>
+                
+                <div class="form-group offset-for-no-label">
+                    <input type="reset" value="Reset" class="btn" />
+                    <input type="submit" value="Change password" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

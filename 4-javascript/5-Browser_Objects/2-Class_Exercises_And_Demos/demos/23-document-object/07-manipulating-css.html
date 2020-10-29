@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Manipulating styles (CSS)</title>
+        <style>
+            body {
+                font-size: 1.4em;
+                text-align: center;
+            }
+
+            #featured-channel {
+                padding: 10px 20px;
+                border: 1px solid crimson;
+                border-radius: 4px;
+            }
+
+            .intro {
+                color: crimson;
+            }
+
+            .first {
+                font-size: 1.5em;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="featured-channel" style="background-color: lightblue; color: #444;">
+            Channel of the times
+            <div id="section-1" class="first intro" name="mtv">MTV</div>
+            <div id="section-2" class="second intro">Music TV</div>
+            <div id="section-3" class="main">A music channel for millenials</div>
+        </div>
+
+        <script>
+            /**
+             * Manipulating element styles in the document
+             */
+
+            // The style property is used to get and set inline styles for an element
+            var div = document.getElementById( 'featured-channel' );
+            console.log( div.style );
+            console.log( div.style.color );
+
+            // all kebab-case CSS properties are converted to camelCase properties of the style property
+            // example: background-color becomes backgroundColor
+            setTimeout( function() {
+                div.style.backgroundColor = 'lightgray';
+            }, 5000 );
+        </script>
+    </body>
+</html>

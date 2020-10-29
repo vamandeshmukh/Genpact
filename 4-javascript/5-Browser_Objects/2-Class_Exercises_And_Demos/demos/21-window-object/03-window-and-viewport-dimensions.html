@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Determining viewport and browser window dimensions</title>
+    </head>
+    <body>
+        <script>
+            /**
+            * Working with the browser window
+            * Determining viewport and browser dimensions
+            */
+
+            console.log( 'Viewport dimensions are ', innerWidth, ' x ', innerHeight );
+            console.log( 'Browser dimensions are ', outerWidth, ' x ', outerHeight );
+
+            // There is no standard specs for the objects the browser creates, i.e. the Browser Object Model (BOM).
+            // Although most browsers would be in sync, there can be browser-specific quirks. Some old browsers determine dimensions differently.
+            // To take care of all browsers, some browser-specific property handling is required.
+
+            // Example: Cross-browser safe way to determine viewport dimensions
+            var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+            var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+            console.log( 'Viewport dimensions are ', width, ' x ', height );
+        </script>
+    </body>
+</html>

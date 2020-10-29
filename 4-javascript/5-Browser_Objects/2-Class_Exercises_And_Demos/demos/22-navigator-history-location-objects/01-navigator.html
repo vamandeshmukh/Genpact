@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>The navigator object</title>
+    </head>
+    <body>
+        <script>
+            /**
+             * The navigator object (i.e. window.navigator) represents the browser
+             */
+            
+            console.log( navigator );
+
+            // most preferred language of user 
+            console.log( navigator.language );
+
+            // unique string representing the browser and its version - sent as part of HTTP requests - server-side code can use this to detect user's browser and customize response if needed
+            console.log( navigator.userAgent );
+        </script>
+    </body>
+</html>

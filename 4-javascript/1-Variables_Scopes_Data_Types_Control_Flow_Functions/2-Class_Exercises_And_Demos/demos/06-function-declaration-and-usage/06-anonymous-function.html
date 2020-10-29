@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Anonymous function</title>
+    </head>
+    <body>
+        <script>
+            /**
+            * Anonymous function:
+            * A function need not have a name in JavaScript. Such functions are said to be anonymous.
+            * They are usually used as arguments passed to other functions (we shall see later)
+            * Here we store an anonymous function in a variable, so we can call it
+            */
+
+            // The right hand side of the assignment is an expression called the 'function expression'
+            var sumOrConcatenate = function( a, b ) {
+                return a + b;
+            };
+
+            console.log( sumOrConcatenate( 'Mr.', 'Bond' ) );	// outputs Mr. Bond
+            console.log( sumOrConcatenate( 1, 2 ) );	// outputs 3
+        </script>
+    </body>
+</html>

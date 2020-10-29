@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>The location object</title>
+    </head>
+    <body>
+        <h1>
+            It is a bright and sunny day
+        </h1>
+        
+        <script>
+            /**
+             * The location object represents the URL of the document loaded in the window
+             */
+            
+            // complete URL (when used as getter)
+            console.log( 'location.href =', location.href );
+
+            // protocol used to retrieve the document
+            console.log( 'location.protocol =', location.protocol );
+
+            // hostname along with port number (if exists)
+            console.log( 'location.host =', location.host );
+
+            // domain of the document URL
+            console.log( 'location.hostname =', location.hostname );
+
+            // port number of the URL
+            console.log( 'location.port =', location.port );
+
+            // path part of the URL
+            console.log( 'location.pathname =', location.pathname );
+
+            // querystring, i.e. everything after the ? upto the # (if exists)
+            console.log( 'location.search =', location.search );
+
+            // hash fragment
+            console.log( 'location.hash =', location.hash );
+
+            /**
+            * The location object represents the URL of the document loaded in the window
+            * Its methods can be used to change the document loaded onto the window tab
+            * Make sure to uncomment statements one-by-one to see the method/property in action
+            */
+
+            /* href property can be set to change document loaded */
+            setTimeout( function() { location.href = 'https://www.medium.com'; }, 5000 );
+
+            /* assign() can be passed the new document's URL - the previous document is saved in browser history (hit back button and check) */
+            // setTimeout( function() { location.assign( 'https://www.medium.com' ); }, 5000 );
+
+            /* replace() can be passed the new document's URL - however the previous document is not saved in browser history */
+            // setTimeout( function() { location.replace( 'https://www.medium.com' ); }, 5000 );
+
+            /*
+            reload() reloads the current document
+            if true is passed, then cache is by-passed (this is termed hard refresh)
+            */
+            // location.reload( true ); // you will see the page flicker because each time the page loads, the location is reloaded again!
+        </script>
+    </body>
+</html>

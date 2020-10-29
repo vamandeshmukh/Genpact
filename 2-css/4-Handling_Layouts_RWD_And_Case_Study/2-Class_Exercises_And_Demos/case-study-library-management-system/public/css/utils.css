@@ -1,0 +1,188 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px; /* baseline for use of rem */
+}
+
+hr {
+    margin: 10px 0;
+    border: none;
+    border-bottom: 1px solid #007bff;
+
+}
+
+.text-bold {
+    font-weight: bold !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-capitalize {
+    text-transform: capitalize !important;
+}
+
+.container {
+    width: 90% !important;
+    margin: 20px auto;
+}
+
+.mt-xxl {
+    margin-top: 30px;
+}
+
+.mb-xxl {
+    margin-bottom: 30px;
+}
+
+.mt-xl {
+    margin-top: 24px;
+}
+
+.mb-xl {
+    margin-bottom: 24px;
+}
+
+.mt-l {
+    margin-top: 20px;
+}
+
+.mb-l {
+    margin-bottom: 20px;
+}
+
+.mt-m {
+    margin-top: 16px;
+}
+
+.mb-m {
+    margin-bottom: 16px;
+}
+
+.mt-s {
+    margin-top: 13px;
+}
+
+.mb-s {
+    margin-bottom: 13px;
+}
+
+.mt-xs {
+    margin-top: 10px;
+}
+
+.mb-xs {
+    margin-bottom: 10px;
+}
+
+.mt-xxs {
+    margin-top: 8px;
+}
+
+.mb-xxs {
+    margin-bottom: 8px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 1.5em;
+    border: 1px solid darkgray;
+    border-radius: 0.25em;
+    background-color: lightgray;
+    color: black;
+    font-family: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #bbb;
+}
+
+.btn-primary {
+    border: 1px solid #007bff;
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-primary:hover {
+    border-color: #0062cc;
+    background-color: #0069d9;
+}
+
+.img-responsive {
+    width: 100%;
+}
+
+.list-unstyled {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.table-bordered {
+    border-collapse: collapse;
+}
+
+.table-bordered, .table-bordered th, .table-bordered td {
+    border: 1px solid #0069d9;
+}
+
+th, td {
+    padding: 8px;
+}
+
+tr {
+    height: 36px;
+}
+
+.table-striped tr:nth-child(even) {
+    background-color: lightgray;
+}
+
+.table-primary.table-striped tr:nth-child(even) {
+    background-color: #99ddff;
+}
+
+.form-group {
+    overflow: auto;
+    width: 100%;
+    margin: 16px 0;
+}
+
+.form-group label, .form-group input, .form-group select, .form-group textarea {
+    float: left;
+    height: 28px;
+    line-height: 1.3;
+    vertical-align: middle;
+}
+
+.form-group textarea {
+    height: auto;
+}
+
+.form-group label {
+    width: 25%;
+    font-weight: bold;
+}
+
+.form-group.offset-for-no-label {
+    margin-left: 25%;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 75%;
+    padding: 0.2em;
+    border: 1px solid lightgray;
+    border-radius: 0.25em;
+}
+
+.form-group input[type=submit], .form-group input[type=reset], .form-group input[type=button] {
+    width: auto;
+    height: auto;
+    padding: 8px 1.5em;
+}

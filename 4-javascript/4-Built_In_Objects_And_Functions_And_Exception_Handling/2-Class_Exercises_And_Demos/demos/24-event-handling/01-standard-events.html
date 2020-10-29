@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Examples of events fired by the browser</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100i,400" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Roboto', Verdana, Arial, sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <label for="txtName" id="txtNameLabel">Cricketer</label>
+        <input type="text" id="txtName" name="txtName" value="Dhoni" />
+        <input type="button" id="btnOK" value="OK" /> <!-- onclick="someFunction()" -->
+
+        <script>
+            /**
+             * Events
+             * Browser fires "events" when something of interest to a page happens
+             * Some examples:
+             *   'click' event when an element (say button) is clicked
+             *   'input': user enters something in an input element (say text box)
+             *   'load': The HTML document along with all assets are fetched and loaded, or an image or script is fetched and loaded
+             *   'mouseover': When the mouse enters inside the box of an HTML element
+             */
+            
+            var txtNameLabel = document.querySelector( '#txtNameLabel' );
+            var txtName = document.querySelector( '#txtName' );
+            var btnOK = document.querySelector( '#btnOK' );
+
+            window.onload = function() {
+                console.log( 'all assets have been loaded' );
+            };
+
+            txtNameLabel.onmouseover = function() {
+                console.log( this ); // DOM node on which the event occured
+                this.style.color = 'crimson';
+            };
+
+            // txtNameLabel.onmouseout = function() {
+            //     console.log( this ); // DOM node on which the event occured
+            //     this.style.color = 'initial';
+            // };
+
+            txtNameLabel.addEventListener( 'mouseout', function() {
+                console.log( this ); // DOM node on which the event occured
+                this.style.color = 'initial';
+            });
+
+            txtName.oninput = function() {
+                console.log( this.value );
+            };
+
+            // Exercise: when button is clicked, the value of the txtName should be logged
+            btnOK.onclick = function() {
+                console.log( txtName.value );
+            };
+
+            /*function someFunction() {
+                console.log( 'someFunction was called' );
+            }*/
+        </script>
+    </body>
+</html>

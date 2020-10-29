@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>View/Edit Profile</title>
+        <link rel="stylesheet" href="css/utils.css">
+        <link rel="stylesheet" href="css/app.css">
+    </head>
+    <body>
+        <h1>View/Edit Profile</h1>
+        <hr />
+
+        <nav>
+            <ul class="list-unstyled menu">
+                <li><a href="assign-release-book.html">Assign/Release book</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="members.html">Members</a></li>
+                <li><a href="add-edit-book.html">Add book</a></li>
+                <li><a href="add-edit-member.html">Add member</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+
+        <h2>Your profile</h2>
+        <hr />
+        <form method="POST">
+            <div>
+                <label for="title">Membership ID</label>
+                <input type="text" id="title" name="title" value="STU-3415" disabled />
+            </div>
+            
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" value="John Doe" disabled />
+            </div>
+        </form>
+
+        <h2>Change password</h2>
+        <hr />
+        <form method="POST">
+            <div>
+                <label for="old-password">Old password</label>
+                <input type="password" id="old-password" name="old-paswword" />
+            </div>
+            
+            <div>
+                <label for="new-password">New password</label>
+                <input type="password" id="new-password" name="new-paswword" />
+            </div>
+            
+            <div>
+                <label for="confirm-password">Confirm password</label>
+                <input type="password" id="confirm-password" name="confirm-paswword" />
+            </div>
+            
+            <div>
+                <input type="reset" value="Reset" />
+                <input type="submit" value="Change password" />
+            </div>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <div>
+            <a href="https://www.google.com">Google search page</a>
+        </div>
+
+        <script>
+            /**
+             * Create an HTML page with three paragraphs. Create CSS classes olive, crimson and purple that simply assign corresponding colors to the elements on which they are applied. Now assign each of the paragraphs a different class (use classList.add()).
+             */
+            var colors = [ 'olive', 'crimson', 'purple', 'goldenrod' ];
+
+            var index = 0;
+            setInterval(function() {
+                document.querySelector( 'a' ).style.color = colors[index++ % colors.length];
+            }, 2000);
+        </script>
+    </body>
+</html>

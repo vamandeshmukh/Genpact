@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Event flow and its phases</title>
+    </head>
+    <body>
+        <div id="indira">
+            <div id="rajiv">
+                <div id="rahul">
+                    <input type="button" value="Vote" id="btnEVM" />
+                </div>
+            </div>
+        </div>
+
+        <script>
+            /**
+             * The browser passes event details to the elements handling handling twice - in "capture" and "bubble" phases
+             * In the first phase (capture), the capture phase event handlers are called starting from the highest in the DOM hieracrhy (HTML body element), down to the event target (innermost element, say button, input element, span etc.).
+             * In the second phase, the handlers (of bubble phase) get called in reverse order (starting from event target upto body)
+             * addEventListener() is a method of EventTarget objects (that include HTMLElements) that can be used to add any number of event handlers on an element for the same event (unlike an on<event> property like onclick)
+             * The second argument to the method if truthy, causes the event handler to be called in capture phase
+             */
+
+            var indira = document.querySelector( '#indira' );
+            var rajiv = document.querySelector( '#rajiv' );
+            var rahul = document.querySelector( '#rahul' );
+            var btnEVM = document.querySelector( '#btnEVM' );
+
+            indira.addEventListener('click', function() {
+                console.log( '[capture phase] click handled by indira' );
+            }, true);
+
+            indira.addEventListener('click', function() {
+                console.log( '[bubble phase] click handled by indira' );
+            }, false);
+
+            rajiv.addEventListener('click', function() {
+                console.log( '[capture phase] click handled by rajiv' );
+            }, true);
+
+            rajiv.addEventListener('click', function() {
+                console.log( '[bubble phase] click handled by rajiv' );
+            });
+
+            rahul.addEventListener('click', function() {
+                console.log( '[capture phase] click handled by rahul' );
+            }, true);
+
+            rahul.addEventListener('click', function() {
+                console.log( '[bubble phase] click handled by rahul' );
+            });
+
+            btnEVM.addEventListener('click', function() {
+                console.log( '[capture phase] click handled by btnEVM' );
+            }, true);
+
+            btnEVM.addEventListener('click', function() {
+                console.log( '[bubble phase] click handled by btnEVM' );
+            });
+        </script>
+    </body>
+</html>
